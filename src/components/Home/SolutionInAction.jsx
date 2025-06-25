@@ -1,6 +1,7 @@
 import { Tab } from "@headlessui/react";
 import { useState } from "react";
 import "../../Style/style.css";
+
 const solutionsData = [
   {
     mainHeading: "TranscriptX",
@@ -266,99 +267,110 @@ Rule out medial meniscus tear (less likely).</p>
 
 export default function SolutionsInAction() {
   const [show, setShow] = useState(false);
-
+  const [selectedExample, setSelectedExample] = useState(
+    solutionsData[0].examples[0]
+  );
   return (
-    <section
-      id="solutions-in-action  "
-      className="p-6  mx-auto bg-[#1e293b] flex flex-col items-center"
-    >
-      <h2 className="text-3xl md:text-5xl text-[#60a5fa] font-bold mb-6 text-center">
-        See Our Solutions in Action
-      </h2>
+    <section className="bg-[#1e293b]">
+      <section
+        id="solutions-in-action  "
+        className="p-6 mx-auto  max-w-5xl flex flex-col items-center"
+      >
+        <h2 className="text-3xl md:text-5xl text-[#60a5fa] font-bold mb-6 text-center">
+          See Our Solutions in Action
+        </h2>
 
-      <Tab.Group>
-        <Tab.List className="flex justify-center  ">
-          {solutionsData.map(({ mainHeading }) => (
-            <Tab
-              key={mainHeading}
-              className={({ selected }) =>
-                `px-4 p-2 text-lg font-medium w-52 ${
-                  selected ? " main-tab-active" : "main-tab"
-                }`
-              }
-            >
-              {mainHeading}
-            </Tab>
-          ))}
-        </Tab.List>
-
-        <div
-          onClick={() => setShow((pre) => !pre)}
-          class="comparison-toggle rounded-b-lg max-w-4xl"
-        >
-          Click to {show ? "collapse" : "expand"} comparison
-        </div>
-        {show && (
-          <Tab.Panels>
-            {solutionsData.map((solution, i) => (
-              <Tab.Panel key={solution.mainHeading}>
-                <Tab.Group>
-                  <Tab.List className="flex justify-center mb-4">
-                    {solution.examples.map((ex, i) => (
-                      <Tab
-                        key={i}
-                        className={({ selected }) =>
-                          `px-3 py-1  text-xs ${
-                            selected
-                              ? "bg-blue-500 text-white"
-                              : "bg-gray-200 text-gray-600"
-                          }`
-                        }
-                      >
-                        example{i + 1}
-                      </Tab>
-                    ))}
-                  </Tab.List>
-                  <Tab.Panels>
-                    {solution.examples.map((ex, i) => (
-                      <Tab.Panel key={i}>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                          <div className="p-4 bg-gray-50 rounded-xl shadow">
-                            <h3 className="text-xl font-semibold mb-2">
-                              {ex.input.dataType}
-                            </h3>
-                            <p className="text-sm text-gray-500 mb-2">
-                              {ex.input.inputType}
-                            </p>
-                            <pre className="whitespace-pre-wrap text-sm text-gray-800">
-                              {ex.input.content}
-                            </pre>
-                          </div>
-
-                          <div className="p-4 bg-blue-50 rounded-xl shadow">
-                            <h3 className="text-xl font-semibold mb-2">
-                              {ex.output.dataType}
-                            </h3>
-                            <p className="text-sm text-gray-500 mb-2">
-                              {ex.output.outputType}
-                            </p>
-                            <div
-                              className="prose prose-sm max-w-none"
-                              dangerouslySetInnerHTML={{
-                                __html: ex.output.content,
-                              }}
-                            />
-                          </div>
-                        </div>
-                      </Tab.Panel>
-                    ))}
-                  </Tab.Panels>
-                </Tab.Group>
-              </Tab.Panel>
+        <Tab.Group>
+          <Tab.List className="flex justify-center mx-auto ">
+            {solutionsData.map(({ mainHeading }) => (
+              <Tab
+                key={mainHeading}
+                className={({ selected }) =>
+                  `px-4 p-2 text-lg font-medium w-52 ${
+                    selected ? " main-tab-active" : "main-tab"
+                  }`
+                }
+              >
+                {mainHeading}
+              </Tab>
             ))}
-          </Tab.Panels>
-        )}
-      </Tab.Group>
+          </Tab.List>
+
+          <div
+            onClick={() => setShow((pre) => !pre)}
+            class="comparison-toggle rounded-b-lg max-w-5xl mx-auto"
+          >
+            Click to {show ? "collapse" : "expand"} comparison
+          </div>
+          <div>
+            {show && (
+              <Tab.Panels>
+                {solutionsData.map((solution, i) => (
+                  <Tab.Panel key={solution.mainHeading}>
+                    <Tab.Group>
+                      <Tab.List className="flex justify-center mb-4 w-full ">
+                        {solution.examples.map((ex, i) => (
+                          <Tab
+                            key={i}
+                            className={({ selected }) =>
+                              `px-3 py-1  text-lg w-52 ${
+                                selected
+                                  ? "bg-blue-500 text-white"
+                                  : "bg-gray-200 text-gray-600"
+                              }`
+                            }
+                          >
+                            example{i + 1}
+                          </Tab>
+                        ))}
+                      </Tab.List>
+
+                      <div className="text-white text-xl font-semibold py-5">
+                        {selectedExample.title}
+                      </div>
+
+                      <Tab.Panels>
+                        {solution.examples.map((ex, i) => (
+                          <Tab.Panel key={i}>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                              <div className="p-4 bg-gray-50 rounded-xl shadow">
+                                <h3 className="text-xl font-semibold mb-2">
+                                  {ex.input.dataType}
+                                </h3>
+                                <p className="text-sm text-gray-500 mb-2">
+                                  {ex.input.inputType}
+                                </p>
+                                <pre className="whitespace-pre-wrap text-sm text-gray-800">
+                                  {ex.input.content}
+                                </pre>
+                              </div>
+
+                              <div className="p-4 bg-blue-50 rounded-xl shadow">
+                                <h3 className="text-xl font-semibold mb-2">
+                                  {ex.output.dataType}
+                                </h3>
+                                <p className="text-sm text-gray-500 mb-2">
+                                  {ex.output.outputType}
+                                </p>
+                                <div
+                                  className="prose prose-sm max-w-none"
+                                  dangerouslySetInnerHTML={{
+                                    __html: ex.output.content,
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          </Tab.Panel>
+                        ))}
+                      </Tab.Panels>
+                    </Tab.Group>
+                  </Tab.Panel>
+                ))}
+              </Tab.Panels>
+            )}
+          </div>
+        </Tab.Group>
+      </section>
     </section>
   );
 }
