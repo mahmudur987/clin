@@ -1,0 +1,25 @@
+.main-tab-active {
+  background-color: var(--slider-bg-main);
+  box-shadow: 0 -3px 0 var(--slider-primary) inset;
+  color: var(--slider-text-light-on-dark);
+}
+.main-tab {
+  padding: 15px 20px;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--slider-bg-tabs);
+  color: var(--slider-text-muted-on-dark);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  flex: 1;
+  border-right: 1px solid var(--slider-border);
+}
+.comparison-toggle {
+  padding: 12px 20px;
+  background-color: var(--slider-primary);
+  color: var(--slider-text-light-on-dark);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
