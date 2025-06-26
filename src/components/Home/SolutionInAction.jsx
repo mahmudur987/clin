@@ -274,7 +274,7 @@ export default function SolutionsInAction() {
     <section className="bg-[#1e293b]">
       <section
         id="solutions-in-action  "
-        className="p-6 mx-auto  max-w-5xl flex flex-col items-center"
+        className="p-6 mx-auto  max-w-5xl  w-full flex flex-col items-center"
       >
         <h2 className="text-3xl md:text-5xl text-[#60a5fa] font-bold mb-6 text-center">
           See Our Solutions in Action
@@ -305,59 +305,66 @@ export default function SolutionsInAction() {
           <div>
             {show && (
               <Tab.Panels>
-                {solutionsData.map((solution, i) => (
+                {solutionsData.map((solution) => (
                   <Tab.Panel key={solution.mainHeading}>
                     <Tab.Group>
-                      <Tab.List className="flex justify-center mb-4 w-full ">
+                      <Tab.List className="flex justify-center mb-4 w-full">
                         {solution.examples.map((ex, i) => (
                           <Tab
                             key={i}
                             className={({ selected }) =>
-                              `px-3 py-1  text-lg w-52 ${
+                              `px-3 py-1  text-lg max-w-xl w-full ${
                                 selected
                                   ? "bg-blue-500 text-white"
                                   : "bg-gray-200 text-gray-600"
                               }`
                             }
                           >
-                            example{i + 1}
+                            example {i + 1}
                           </Tab>
                         ))}
                       </Tab.List>
 
-                      <div className="text-white text-xl font-semibold py-5">
-                        {selectedExample.title}
-                      </div>
-
                       <Tab.Panels>
                         {solution.examples.map((ex, i) => (
                           <Tab.Panel key={i}>
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                              <div className="p-4 bg-gray-50 rounded-xl shadow">
-                                <h3 className="text-xl font-semibold mb-2">
-                                  {ex.input.dataType}
-                                </h3>
-                                <p className="text-sm text-gray-500 mb-2">
-                                  {ex.input.inputType}
-                                </p>
-                                <pre className="whitespace-pre-wrap text-sm text-gray-800">
-                                  {ex.input.content}
-                                </pre>
+                            <div>
+                              <div className="text-white text-xl font-semibold py-5">
+                                {ex.title}
                               </div>
 
-                              <div className="p-4 bg-blue-50 rounded-xl shadow">
-                                <h3 className="text-xl font-semibold mb-2">
-                                  {ex.output.dataType}
-                                </h3>
-                                <p className="text-sm text-gray-500 mb-2">
-                                  {ex.output.outputType}
-                                </p>
-                                <div
-                                  className="prose prose-sm max-w-none"
-                                  dangerouslySetInnerHTML={{
-                                    __html: ex.output.content,
-                                  }}
-                                />
+                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div className="m-4 p-1 bg-black rounded-xl shadow">
+                                  <div className="panel-header panel-before flex justify-between p-2">
+                                    <h3 className="text-xl font-semibold mb-2 text-[#3b82f6]">
+                                      {ex.input.dataType}
+                                    </h3>
+                                    <p className="text-sm  mb-2 text-[#3b82f6]">
+                                      {ex.input.inputType}
+                                    </p>
+                                  </div>
+
+                                  <pre className="whitespace-pre-wrap text-sm bg-black text-white">
+                                    {ex.input.content}
+                                  </pre>
+                                </div>
+
+                                <div className="m-4  p-1   bg-black text-white rounded-xl shadow">
+                                  <div className="panel-header panel-before flex justify-between p-2">
+                                    <h3 className="text-xl font-semibold mb-2 text-[#3b82f6]">
+                                      {ex.output.dataType}
+                                    </h3>
+                                    <p className="text-sm  mb-2 text-[#3b82f6]">
+                                      {ex.output.outputType}
+                                    </p>
+                                  </div>
+                                  <div
+                                    className="prose prose-sm max-w-none"
+                                    dangerouslySetInnerHTML={{
+                                      __html: ex.output.content,
+                                    }}
+                                  />
+                                </div>
                               </div>
                             </div>
                           </Tab.Panel>

@@ -23,3 +23,18 @@
   font-weight: 500;
   transition: background-color 0.3s;
 }
+
+.header-before {
+  background-color: var(--slider-primary-light);
+  color: var(--slider-primary);
+}
+.text-panel {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-dim) var(--color-bg-darker);
+  transition: width 0.3s;
+}
+.panel-before {
+  background-color: var(--slider-bg-panel);
+}
