@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function GetStarted() {
   return (
     <section className="bg-[#141e35] text-white py-16 px-6 text-center">
@@ -22,12 +24,16 @@ export default function GetStarted() {
         </div>
 
         <div className="flex justify-center gap-4">
-          <button className="px-6 py-2 rounded-full border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-200">
-            Login
-          </button>
-          <button className="px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-200 shadow-md">
-            Signup
-          </button>
+          <Link to={"/login"}>
+            <button className="px-6 py-2 rounded-full border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-200">
+              Login
+            </button>
+          </Link>
+          <Link to={"/signup"}>
+            <button className="px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-200 shadow-md">
+              Signup
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const benefits = [
   "Reduction in documentation time by 40–60%",
@@ -37,12 +38,16 @@ export default function Benefits() {
           ))}
         </div>
         <div className="flex justify-center gap-4">
-          <button className="px-6 py-2 border border-blue-500 text-blue-400 rounded-full hover:bg-blue-500 hover:text-white transition">
-            Login
-          </button>
-          <button className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
-            Signup
-          </button>
+          <Link to={"/login"}>
+            <button className="px-6 py-2 border border-blue-500 text-blue-400 rounded-full hover:bg-blue-500 hover:text-white transition">
+              Login
+            </button>
+          </Link>
+          <Link to={"/signup"}>
+            <button className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+              Signup
+            </button>
+          </Link>
         </div>
       </div>
     </section>

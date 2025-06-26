@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/clin-removebg-preview.png";
 import BackgroundGlow from "../Common/BackgroundGlow";
 
@@ -29,9 +30,11 @@ export default function Hero() {
         </p>
 
         <div className="flex justify-center gap-4 ">
-          <button className="px-6 py-2 border border-blue-500 text-blue-400 rounded-full hover:bg-blue-500 hover:text-white transition">
-            Login
-          </button>
+          <Link to={"/login"}>
+            <button className="px-6 py-2 border border-blue-500 text-blue-400 rounded-full hover:bg-blue-500 hover:text-white transition">
+              Login
+            </button>
+          </Link>
           <div className="relative">
             <div class="absolute top-[20px] left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 animate-[fadeIn_1s_forwards_2s] ">
               <div class="w-[24px] h-[38px] border-2 border-[rgba(148,163,184,0.5)] rounded-[12px] relative">
@@ -39,10 +42,11 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
-          <button className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
-            Signup
-          </button>
+          <Link to={"/signup"}>
+            <button className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+              Signup
+            </button>
+          </Link>
         </div>
       </div>
     </div>

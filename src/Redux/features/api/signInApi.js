@@ -1,6 +1,6 @@
 // blogApi or authApi depending on your project structure
 
-import { apiSlice } from "../api/apiSlice";
+import { apiSlice } from "../slice/apiSlice";
 
 export const authApi = apiSlice.injectEndpoints({
   overrideExisting: true,

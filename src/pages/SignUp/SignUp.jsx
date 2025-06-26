@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import logo from "../../assets/clin-bgless.png";
-import { useSignUpMutation } from "../../Redux/features/slices/signInApi";
+import { useSignUpMutation } from "../../Redux/features/api/signInApi";
 import { useNavigate } from "react-router-dom";
 const SignupForm = () => {
   const [signup, { isLoading }] = useSignUpMutation();

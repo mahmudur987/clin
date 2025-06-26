@@ -3,7 +3,7 @@ import logo from "../../assets/clin-bgless.png";
 import {
   useOtpCheckMutation,
   useResendOtpMutation,
-} from "../../Redux/features/slices/signInApi";
+} from "../../Redux/features/api/signInApi";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
