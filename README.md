@@ -1,12 +1,68 @@
-# React + Vite
+# Clin Technologies - AI Healthcare Solutions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern, responsive landing page showcasing AI-powered healthcare solutions built with React, Tailwind CSS, Redux, and RTK Query.
 
-Currently, two official plugins are available:
+## 🧠 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clin Technologies delivers intelligent, compliant, and personalized medical documentation tools. This project demonstrates the landing page UI/UX highlighting core solutions such as TranscriptX, Chartwright, Redactify, and Validify.
 
-## Expanding the ESLint configuration
+## 🔧 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React (Vite)
+- 🎨 Tailwind CSS
+- 📦 Redux Toolkit
+- 🔍 RTK Query
+- 🧠 Lucide Icons
+
+---
+
+## 📁 Features
+
+- ✅ Responsive design
+- ✅ Animated SVG sections
+- ✅ Interactive examples with input/output comparisons
+- ✅ Product cards for each AI tool
+- ✅ Secure, HIPAA-compliant messaging
+- ✅ Login & Signup CTA buttons
+- ✅ Smooth scroll and polished UI
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/clin-ai-landing.git
+cd clin-ai-landing
+
+
+2. Install Dependencies
+
+npm install
+3. Run the App
+
+npm run dev
+
+
+
+🧩 Folder Structure
+src/
+│
+├── assets/              # Images and SVGs
+├── components/          # Reusable components
+│   ├── Navbar.jsx
+│   ├── HeroSection.jsx
+│   ├── Solutions.jsx
+│   ├── ComparisonSlider.jsx
+│   └── Footer.jsx
+│
+├── data/                # Structured example data
+│   └── solutions.js
+│
+├── redux/               # Redux store and slices
+│   └── store.js
+│
+├── App.jsx              # Root component
+└── main.jsx             # Entry point
+```
