@@ -1,3 +1,25 @@
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone hhttps://github.com/mahmudur987/clin.git
+
+cd clin
+
+
+2. Install Dependencies
+
+npm install
+
+
+3. Run the App
+
+npm run dev
+
+
+---
+
 # Clin Technologies - AI Healthcare Solutions
 
 > A modern, responsive landing page showcasing AI-powered healthcare solutions built with React, Tailwind CSS, Redux, and RTK Query.
@@ -27,22 +49,6 @@ Clin Technologies delivers intelligent, compliant, and personalized medical docu
 - ✅ Smooth scroll and polished UI
 
 ---
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/clin-ai-landing.git
-cd clin-ai-landing
-
-
-2. Install Dependencies
-
-npm install
-3. Run the App
-
-npm run dev
 
 
 
