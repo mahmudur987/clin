@@ -267,14 +267,12 @@ Rule out medial meniscus tear (less likely).</p>
 
 export default function SolutionsInAction() {
   const [show, setShow] = useState(false);
-  const [selectedExample, setSelectedExample] = useState(
-    solutionsData[0].examples[0]
-  );
+
   return (
     <section className="bg-[#1e293b]">
       <section
         id="solutions-in-action  "
-        className="p-6 mx-auto  max-w-5xl  w-full flex flex-col items-center"
+        className="p-6 mx-auto  max-w-6xl  w-full flex flex-col items-center"
       >
         <h2 className="text-3xl md:text-5xl text-[#60a5fa] font-bold mb-6 text-center">
           See Our Solutions in Action
@@ -333,8 +331,8 @@ export default function SolutionsInAction() {
                                 {ex.title}
                               </div>
 
-                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                <div className="m-4 p-1 bg-black rounded-xl shadow">
+                              <div className=" max-w-6xl w-full  grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div className="m-4 p-1 bg-black rounded-xl shadow max-w-3xl w-full">
                                   <div className="panel-header panel-before flex justify-between p-2">
                                     <h3 className="text-xl font-semibold mb-2 text-[#3b82f6]">
                                       {ex.input.dataType}
@@ -349,7 +347,7 @@ export default function SolutionsInAction() {
                                   </pre>
                                 </div>
 
-                                <div className="m-4  p-1   bg-black text-white rounded-xl shadow">
+                                <div className="m-4  p-1   bg-black text-white rounded-xl shadow max-w-3xl w-full ">
                                   <div className="panel-header panel-before flex justify-between p-2">
                                     <h3 className="text-xl font-semibold mb-2 text-[#3b82f6]">
                                       {ex.output.dataType}
