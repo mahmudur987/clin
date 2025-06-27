@@ -3,6 +3,7 @@ import { Eye, EyeOff } from "lucide-react";
 import logo from "../../assets/clin-bgless.png";
 import { useLoginMutation } from "../../Redux/features/api/signInApi";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const SignInForm = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -38,6 +39,7 @@ const SignInForm = () => {
       setErrorMessage("");
     } catch (error) {
       console.error(error?.data?.error?.message);
+      toast.error(error ? error?.data?.error?.message : "Error");
     }
   };
   return (

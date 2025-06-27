@@ -1,40 +1,10 @@
-import { AlignJustify } from "lucide-react";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleSidebar } from "../../Redux/features/slice/uiSlice";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const showSidebar = useSelector((state) => state.ui.showSidebar);
-  const dispatch = useDispatch();
 
   return (
     <div className="flex-1 flex flex-col ">
-      {/* Top*/}
-      <div className="flex items-center justify-between gap-5 bg-white px-6 py-4 shadow relative">
-        {!showSidebar && (
-          <div className="relative">
-            <button
-              onClick={() => dispatch(toggleSidebar())}
-              className="btn btn-primary my-3"
-            >
-              <AlignJustify size={20} />
-            </button>
-          </div>
-        )}
-
-        <div className="flex items-center gap-3 flex-1">
-          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 text-lg">
-            K
-          </div>
-          <div>
-            <div className="text-sm font-semibold">Guest</div>
-            <div className="text-xs text-gray-500">Welcome back</div>
-          </div>
-        </div>
-        <div>
-          <button className="bg-blue-600 text-white p-2 rounded-lg">↻</button>
-        </div>
-      </div>
-      {/* bottom */}
       <div className="flex-1 flex">
         {!showSidebar && <div className="w-20 bg-white"></div>}
         <div className="flex flex-col flex-1">

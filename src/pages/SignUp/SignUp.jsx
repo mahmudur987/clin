@@ -3,6 +3,7 @@ import { Eye, EyeOff } from "lucide-react";
 import logo from "../../assets/clin-bgless.png";
 import { useSignUpMutation } from "../../Redux/features/api/signInApi";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const SignupForm = () => {
   const [signup, { isLoading }] = useSignUpMutation();
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const SignupForm = () => {
 
     try {
       const response = await signup({ email, password }).unwrap();
-      console.log("Login success:", response);
+      console.log("SignUp success:", response);
       // Save tokens to localStorage or cookies if needed
 
       localStorage.setItem("refreshToken", response.refresh_token);
@@ -53,6 +54,7 @@ const SignupForm = () => {
       setErrorMessage("");
     } catch (error) {
       console.error(error?.data?.error?.message);
+      toast.error(error ? error?.data?.error?.message : "Error");
     }
   };
   return (
